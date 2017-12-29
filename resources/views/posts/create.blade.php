@@ -19,6 +19,13 @@
 		    {{ Form::label('body', 'Body:') }}
 			{{ Form::textarea('body', null, array('class'=> 'form-control','required' => '')) }}
 
+			{{ Form::label('category_id', 'Category') }}
+			<select class="form-control" name="category_id">
+				@foreach($categories as $category)
+				<option value="{{ $category->id }}">{{ $category->name }}</option>
+				@endforeach
+			</select>
+
 			{{ Form::label('author', 'Author:') }}
 			{{ Form::text('author', null, array('class'=> 'form-control','required' => '')) }}
 		    

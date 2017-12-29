@@ -10,4 +10,8 @@ class Post extends Model
     {
     	return $this->belongsTo('App\category'); 
     }
+    public function tags()
+    {
+    	return $this->belongsTo('App\Tag');
+    }
 }

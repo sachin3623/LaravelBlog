@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
 use Session;
+use App\Category;
 
 class PostController extends Controller
 {
@@ -26,7 +27,8 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('posts.create');
+        $categories = Category::all();
+        return view('posts.create')->withCategories($categories);
     }
 
     /**
@@ -40,7 +42,9 @@ class PostController extends Controller
         $this->Validate($request, array(
             'title' => 'required|max:255',
             'author' => 'required|max:255',
+            'category_id' => 'required',
             'body' => 'required'
+
              ));
 
         //store in database
@@ -48,6 +52,7 @@ class PostController extends Controller
 
         $post->title= $request->title;
         $post->author= $request->author;
+        $post->category_id= $request->category_id;
         $post->body= $request->body;
 
         $post->save();
