@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Post;
 use Session;
 use App\Category;
+use App\Http\Requests\StoreBlogPost;
+
 
 class PostController extends Controller
 {
@@ -37,15 +39,10 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreBlogPost $request)
     {
-        $this->Validate($request, array(
-            'title' => 'required|max:255',
-            'author' => 'required|max:255',
-            'category_id' => 'required',
-            'body' => 'required'
-
-             ));
+        //this is validated with form method
+        
 
         //store in database
         $post = new Post;
