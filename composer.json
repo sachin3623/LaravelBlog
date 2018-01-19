@@ -1,12 +1,13 @@
 {
     "name": "laravel/laravel",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "description": "cos",
+    "keywords": ["admin"],
     "license": "MIT",
     "type": "project",
     "require": {
         "php": ">=7.0.0",
         "fideloper/proxy": "~3.3",
+        "jeroen-g/laravel-packager": "^1.6",
         "laravel/framework": "5.5.*",
         "laravel/tinker": "~1.0",
         "laravelcollective/html": "^5.2.0",
@@ -24,11 +25,13 @@
             "database/factories"
         ],
         "psr-4": {
+            "manish\\cos\\": "packages/manish/cos/src",
             "App\\": "app/"
         }
     },
     "autoload-dev": {
         "psr-4": {
+            "manish\\cos\\": "packages/manish/cos/src",
             "Tests\\": "tests/"
         }
     },

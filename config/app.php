@@ -179,6 +179,11 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        manish\cos\cosServiceProvider::class,
+
+
+        JeroenG\Packager\PackagerServiceProvider::class,
+
     ],
 
     /*
